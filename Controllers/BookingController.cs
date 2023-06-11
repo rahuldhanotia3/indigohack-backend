@@ -14,10 +14,10 @@ namespace WebApiProject1.Controllers
             return await _context.Bookings.ToListAsync();
         }
 
-        [HttpGet("id")]
-        public async Task<IActionResult> GetById(int id)
+        [HttpGet("pnr")]
+        public async Task<IActionResult> GetByPnr(int pnr)
         {
-            var emp = await _context.Bookings.FindAsync(id);
+            var emp = await _context.Bookings.FindAsync(pnr);
             return emp == null ? NotFound() : Ok(emp);
         }
 
@@ -27,7 +27,7 @@ namespace WebApiProject1.Controllers
             await _context.Bookings.AddAsync(e);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction (nameof(GetById), new { id = e.id},e);
+            return CreatedAtAction (nameof(GetByPnr), new { pnr = e.pnr},e);
         }
     }
 }
