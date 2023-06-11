@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using WebApi1.Data;
+using WebApi1.Models;
 namespace WebApiProject1.Controllers
 {
     [Route("api/[controller]")]
